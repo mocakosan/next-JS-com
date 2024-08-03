@@ -1,11 +1,11 @@
-import styles from "./page.module.css";
+import styles from "@/app/(beforeLogin)/_component/main.module.css";
 import Image from "next/image";
-import jsLogo from "../../public/js-dark.png";
+import jsLogo from "../../../../public/js-dark.png";
 import Link from "next/link";
 
 export default function Main() {
   return (
-    <div className={styles.container}>
+    <>
       <div className={styles.left}>
         <Image src={jsLogo} alt="logo" />
       </div>
@@ -15,11 +15,11 @@ export default function Main() {
         <Link href="/i/flow/signup" className={styles.signup}>
           계정 만들기
         </Link>
-        <h3>이미 가입하셨나요?</h3>
+        <h3>이미 트위터에 가입하셨나요?</h3>
         <Link href="/login" className={styles.login}>
           로그인
         </Link>
       </div>
-    </div>
+    </>
   );
 }
