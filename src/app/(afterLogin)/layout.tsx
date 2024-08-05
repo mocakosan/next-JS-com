@@ -5,9 +5,8 @@ import Image from "next/image";
 import jsLogo from "../../../public/js-dark.png";
 import NavMenu from "@/app/(afterLogin)/_component/NavMenu";
 import LogoutButton from "@/app/(afterLogin)/_component/LogOutButton";
-
-// import TrendSection from "@/app/(afterLogin)/_component/TrendSection";
-// import FollowRecommend from "@/app/(afterLogin)/_component/FollowRecommend";
+import TrendSection from "@/app/(afterLogin)/_component/TrendSection";
+import FollowRecommend from "@/app/(afterLogin)/_component/FollowRecommend";
 
 export default function AfterLoginLayout({
   children,
@@ -50,12 +49,12 @@ export default function AfterLoginLayout({
                 <input type="search" />
               </form>
             </div>
-            {/* <TrendSection /> */}
+            <TrendSection />
             <div className={style.followRecommend}>
               <h3>팔로우 추천</h3>
-              {/* <FollowRecommend />
               <FollowRecommend />
-              <FollowRecommend /> */}
+              <FollowRecommend />
+              <FollowRecommend />
             </div>
           </section>
         </div>
