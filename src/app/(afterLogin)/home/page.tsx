@@ -5,6 +5,9 @@ import PostForm from "@/app/(afterLogin)/home/_component/PostForm";
 import Post from "@/app/(afterLogin)/_component/Post";
 import TabDecider from "./_component/TabDecider";
 import { auth } from "@/auth";
+import { Suspense } from "react";
+import TabDeciderSuspense from "./_component/TabDeciderSuspense";
+import Loading from "./loading";
 
 export default async function Home() {
   const session = await auth();
@@ -13,7 +16,9 @@ export default async function Home() {
       <TabProvider>
         <Tab />
         <PostForm me={session} />
-        <TabDecider />
+        <Suspense fallback={<Loading />}>
+          <TabDeciderSuspense />
+        </Suspense>
       </TabProvider>
     </main>
   );
