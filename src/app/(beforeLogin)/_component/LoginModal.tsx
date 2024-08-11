@@ -15,12 +15,17 @@ export default function LoginModal() {
     e.preventDefault();
     setMessage("");
     try {
-      await signIn("credentials", {
+      const response = await signIn("credentials", {
         username: id,
         password,
         redirect: false,
       });
-      router.replace("/home");
+      console.log("err", response);
+      if (!response?.ok) {
+        router.replace("/home");
+      } else {
+        setMessage("아이디와 비밀번호가 일치하지 않습니다.");
+      }
     } catch (err) {
       console.error(err);
       setMessage("아이디와 비밀번호가 일치하지 않습니다.");
