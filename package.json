@@ -13,6 +13,7 @@
     "@auth/core": "^0.34.2",
     "@tanstack/react-query": "^5.51.23",
     "classnames": "^2.5.1",
+    "cookie": "^0.6.0",
     "dayjs": "^1.11.12",
     "next": "14.2.5",
     "next-auth": "^5.0.0-beta.11",
