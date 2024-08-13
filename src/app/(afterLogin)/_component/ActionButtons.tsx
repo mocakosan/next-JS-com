@@ -259,7 +259,7 @@ export default function ActionButtons({ white, post }: Props) {
 
   const onClickComment = () => {};
   const onClickRepost = () => {};
-  const onClickHeart = (e) => {
+  const onClickHeart = (e: any) => {
     e.stopPropagation();
     if (liked) {
       unheart.mutate();

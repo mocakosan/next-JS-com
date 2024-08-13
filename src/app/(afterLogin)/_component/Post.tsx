@@ -18,7 +18,7 @@ type Props = {
 export default function Post({ noImage, post }: Props) {
   const target = post;
 
-  const stopPropagation = (e) => {
+  const stopPropagation = (e: any) => {
     e.stopPropagation();
   };
 

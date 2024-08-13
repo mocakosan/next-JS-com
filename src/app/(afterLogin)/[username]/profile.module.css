@@ -24,9 +24,23 @@
 
 .userZone {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   border-bottom: 1px solid rgb(239, 243, 244);
   padding: 12px 16px;
+  align-items: flex-start;
+}
+
+.userRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userFollower {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding-top: 8px;
 }
 
 .userImage {
@@ -34,6 +48,9 @@
   align-items: center;
   margin-right: 12px;
   border-radius: 50%;
+  width: 134px;
+  height: 134px;
+  border: 1px solid lightgray;
 }
 .userImage img {
   width: 134px;
@@ -65,6 +82,14 @@
 }
 .followButton:hover {
   background-color: rgb(39, 44, 48);
+}
+.followButton.followed {
+  background: white;
+  color: black;
+  border: 1px solid grey;
+}
+.followButton.followed:hover {
+  background: lightgray;
 }
 
 .backButton {

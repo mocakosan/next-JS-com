@@ -1,19 +1,29 @@
 import style from "./profile.module.css";
 import {
+  dehydrate,
   HydrationBoundary,
   QueryClient,
-  dehydrate,
 } from "@tanstack/react-query";
 import UserPosts from "@/app/(afterLogin)/[username]/_component/UserPosts";
 import UserInfo from "@/app/(afterLogin)/[username]/_component/UserInfo";
 import { getUserPosts } from "@/app/(afterLogin)/[username]/_lib/getUserPosts";
 import { getUserServer } from "@/app/(afterLogin)/[username]/_lib/getUserServer";
 import { auth } from "@/auth";
+import { User } from "@/model/User";
+
+export async function generateMetadata({ params }: Props) {
+  const user: User = await getUserServer({
+    queryKey: ["users", params.username],
+  });
+  return {
+    title: `${user.nickname} (${user.id}) / JS`,
+    description: `${user.nickname} (${user.id}) 프로필`,
+  };
+}
 
 type Props = {
   params: { username: string };
 };
-
 export default async function Profile({ params }: Props) {
   const { username } = params;
   const session = await auth();
