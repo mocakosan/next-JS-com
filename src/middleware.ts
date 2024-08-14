@@ -1,4 +1,4 @@
-//페이지 접근권한 해주는곳
+//페이지 접근권한
 import { auth } from "./auth";
 import { NextResponse } from "next/server";
 
